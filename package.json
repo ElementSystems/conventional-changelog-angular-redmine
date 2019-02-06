@@ -1,0 +1,38 @@
+{
+  "author": {
+    "name": "Clemens Bastian (ElementSystems)"
+  },
+  "dependencies": {
+    "compare-func": "^1.3.1",
+    "q": "^1.5.1"
+  },
+  "deprecated": false,
+  "description": "conventional-changelog angular redmine preset",
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "files": [
+    "conventional-changelog.js",
+    "conventional-recommended-bump.js",
+    "index.js",
+    "parser-opts.js",
+    "writer-opts.js",
+    "templates"
+  ],
+  "keywords": [
+    "conventional-changelog",
+    "angular",
+    "preset"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "conventional-changelog-angular-redmine",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElementSystems/conventional-changelog-angular-redmine.git"
+  },
+  "scripts": {
+    "test-windows": "mocha --timeout 30000"
+  },
+  "version": "1.0.0"
+}
