@@ -10,3 +10,9 @@ Angular's [commit message guidelines](https://github.com/angular/angular/blob/ma
 ```
 npm install conventional-changelog-angular-redmine --save-dev
 ```
+
+## Usage/Configuration
+To use this conventional changelog you need to active it in the .releaserc of [semantic-release](https://github.com/semantic-release/semantic-release)
+```
+"plugins": [..., ['@semantic-release/release-notes-generator', {"preset": "angular-redmine"}],...]
+```
