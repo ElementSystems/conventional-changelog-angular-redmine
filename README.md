@@ -4,3 +4,9 @@
 
 ## Angular Convention
 Angular's [commit message guidelines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit).
+
+## npm
+[NPM Package: conventional-changelog-angular-redmine](https://www.npmjs.com/package/conventional-changelog-angular-redmine)
+```
+npm install conventional-changelog-angular-redmine --save-dev
+```
