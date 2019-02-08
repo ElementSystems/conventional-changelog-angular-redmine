@@ -24,13 +24,7 @@
 {{~/if}}
 
 {{~!-- commit references --}}
-{{~#if references}} |
-  {{~#each references}}
-      {{#if @root.linkReferences}}
- [#{{this.issue}}]({{@root.redmineBaseUrl}}/issues/{{this.issue}})
-      {{else}}
- #{{this.issue}}
-      {{~/if}}
-  {{/each}}
+{{~#if references}}
+  {{~#each references}}{{#if @root.linkReferences}} [`#{{this.issue}}`]({{@root.redmineBaseUrl}}/issues/{{this.issue}}){{else}} `#{{this.issue}}`{{~/if}}{{/each}}
 {{~/if}}
 
