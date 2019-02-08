@@ -66,33 +66,18 @@ function getWriterOpts () {
       }
 
       if (typeof commit.subject === `string`) {
-        let url = context.repository
-          ? `${context.host}/${context.owner}/${context.repository}`
-          : context.repoUrl
-        if (url) {
-          url = `${url}/issues/`
-          // Issue URLs.
-          commit.subject = commit.subject.replace(/#([0-9]+)/g, (_, issue) => {
-            issues.push(issue)
-            return `[#${issue}](${url}${issue})`
-          })
-        }
         if (context.host) {
           // User URLs.
           commit.subject = commit.subject.replace(/\B@([a-z0-9](?:-?[a-z0-9]){0,38})/g, `[@$1](${context.host}/$1)`)
         }
       }
 
-      // remove references that already appear in the subject
-      commit.references = commit.references.filter(reference => {
-        if (issues.indexOf(reference.issue) === -1) {
-          return true
-        }
-
-        return false
-      })
 
       return commit
+    },
+    finalizeContext: (context, options, commits, keyCommit) => {
+      context.redmineBaseUrl = 'http://redmine.example.com'
+      return context;
     },
     groupBy: `type`,
     commitGroupsSort: `title`,

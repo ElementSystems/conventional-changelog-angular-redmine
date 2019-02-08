@@ -12,7 +12,23 @@ npm install conventional-changelog-angular-redmine --save-dev
 ```
 
 ## Usage/Configuration
-To use this conventional changelog you need to active it in the .releaserc of [semantic-release](https://github.com/semantic-release/semantic-release)
+To use this conventional changelog you need to active it in the `release.config.js` of [semantic-release](https://github.com/semantic-release/semantic-release).
+Make sure to correctly link your redmine installaion by replacing the `finalizeContext` function in `release.config.js` like this:
 ```
-"plugins": [..., ['@semantic-release/release-notes-generator', {"preset": "angular-redmine"}],...]
+...
+"generateNotes": {
+        "preset": "angular-redmine",
+        "writerOpts": {
+            "finalizeContext": function (context, options, commits, keyCommit) {
+                context.redmineBaseUrl = 'https://redmine.example.com';
+                return context;
+            }
+        }
+    },
+    "plugins": [
+        ...
+        '@semantic-release/release-notes-generator',
+        ...
+    ]
+...
 ```
